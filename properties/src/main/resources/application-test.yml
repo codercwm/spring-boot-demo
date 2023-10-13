@@ -1,0 +1,7 @@
+env: test
+artifact-id: @artifactId@
+version: @version@
+appinfo:
+  a: 测试环境-aaaaaaaa
+  b: 测试环境-bbbbbbbbbbb
+  c: 测试环境-cccccccccccc

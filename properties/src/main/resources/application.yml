@@ -1,0 +1,8 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /demo
+spring:
+  profiles:
+    #使用哪个环境的配置
+    active: test

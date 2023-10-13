@@ -1,0 +1,7 @@
+env: dev
+artifact-id: @artifactId@
+version: @version@
+appinfo:
+  a: 开发环境-aaaaaaaa
+  b: 开发环境-bbbbbbbbbbb
+  c: 开发环境-cccccccccccc

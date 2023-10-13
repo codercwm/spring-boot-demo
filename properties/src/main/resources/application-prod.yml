@@ -1,0 +1,7 @@
+env: prod
+artifact-id: @artifactId@
+version: @version@
+appinfo:
+  a: 生产环境-aaaaaaaa
+  b: 生产环境-bbbbbbbbbbb
+  c: 生产环境-cccccccccccc

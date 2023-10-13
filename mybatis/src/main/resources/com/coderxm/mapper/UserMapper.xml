@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.coderxm.mapper.UserMapper">
+    <!-- id表示UserMapper的方法名称 resultType表示返回的数据类型 -->
+    <select id="search" resultType="com.coderxm.pojo.User">
+        SELECT * FROM user
+        <!-- where标签会在where语句不为空时添加where关键词，并且去除多余的and、or关键词 -->
+        <where>
+            <if test="keyword != null">
+                AND username LIKE CONCAT('%', #{keyword}, '%')
+            </if>
+            <!-- xml文件中使用小于号< 会报错，可以使用&lt;代替，或者<![CDATA[ 内容 ]]>包裹 -->
+            <if test="createTimeStart != null">
+                AND create_time <![CDATA[ >= ]]> #{createTimeStart}
+            </if>
+            <if test="createTimeEnd != null">
+                AND create_time &lt;= #{createTimeEnd}
+            </if>
+        </where>
+    </select>
+    <update id="update">
+        UPDATE user
+        <!-- set标签会自动添加set关键词，并去除多余的逗号 -->
+        <set>
+            <if test="username != null">
+                username = #{username},
+            </if>
+            <if test="password != null">
+                password = #{password},
+            </if>
+        </set>
+        <where>
+            id = #{id}
+        </where>
+    </update>
+</mapper>
