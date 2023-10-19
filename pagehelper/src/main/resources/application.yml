@@ -1,0 +1,31 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/spring_boot_demo
+    username: root
+    password: 123456
+
+mybatis:
+  configuration:
+    # 把日志显示在控制台中
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # 带下划线的字段映射到驼峰属性名中
+    map-underscore-to-camel-case: true
+
+mapper:
+  mappers:
+    - tk.mybatis.mapper.common.Mapper
+  not-empty: true
+  style: camelhump
+  wrap-keyword: "`{0}`"
+  safe-delete: true
+  safe-update: true
+  identity: MYSQL
+pagehelper:
+  auto-dialect: true
+  helper-dialect: mysql
+  reasonable: true
+  params: count=countSql

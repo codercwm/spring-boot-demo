@@ -42,7 +42,7 @@ public class UserController {
     @PutMapping("/update")
     public Response update(@RequestBody User reqUser) {
         if (reqUser.getId() == null || reqUser.getId() < 1) {
-            return Response.error("id不能为空");
+            return Response.fail("id不能为空");
         }
         User user = new User();
         user.setId(reqUser.getId());
