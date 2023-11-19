@@ -1,0 +1,6 @@
+server:
+  # 端口
+  port: 8080
+  servlet:
+    # 项目路径，配置之后访问路径变成了 http://localhost:8080/demo/
+    context-path: /demo

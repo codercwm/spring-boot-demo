@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloworldController {
 
     @GetMapping("/hello") // 创建一个路由hello，处理http get请求
-    public String hello(@RequestParam(required = false, name = "who") String who) { // 接受非必须请求参数name，赋值给who参数
-        if (StrUtil.isBlank(who)) {
+    public String hello(@RequestParam(required = false, name = "hello") String hello) { // 接受非必须请求参数name，赋值给hello参数
+        if (StrUtil.isBlank(hello)) {
             // 判断是否为空，如果为空就给默认值
-            who = "World";
+            hello = "World";
         }
         // 拼接字符串并返回
-        return StrUtil.format("Hello {}!!", who);
+        return StrUtil.format("Hello {}!!", hello);
     }
 }
